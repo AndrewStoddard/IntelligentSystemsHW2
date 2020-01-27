@@ -44,6 +44,7 @@ public class DepthFirstSearch {
 		ArrayList<String> orderedStates = new ArrayList<String>();
 		Stack<State> stack = new Stack<State>();
 		orderedStates.add(this.startState.toString());
+		
 		ArrayList<State> visited = new ArrayList<State>();
 		State currState = null;
 		stack.push(this.startState);
@@ -51,11 +52,12 @@ public class DepthFirstSearch {
 			currState = stack.pop();
 			if (!visited.contains(currState)) {
 				visited.add(currState);
-				if (!orderedStates.contains(currState.toString()) && !orderedStates.contains(this.goalState.toString())) {
+				if (!orderedStates.contains(currState.toString())) {
 					orderedStates.add(currState.toString());
 				}
 				if (currState.equals(this.goalState)) {
 					System.out.println("Solution found.");
+					break;
 				}
 				for (State state : currState.getSuccessorsReversed()) {
 					if (!visited.contains(state)) {
@@ -64,7 +66,7 @@ public class DepthFirstSearch {
 				}
 			}
 		}
-		// TO-DO
+		
 		return orderedStates.toString();
 	}
 }

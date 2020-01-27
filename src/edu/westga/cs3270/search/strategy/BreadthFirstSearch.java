@@ -57,6 +57,7 @@ public class BreadthFirstSearch {
 				break;
 			}
 			for (State currentSuccessor : currentState.getSuccessors()) {
+				System.out.println("Solution found.");
 				queue.add(currentSuccessor);
 			}
 		}
