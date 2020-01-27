@@ -43,7 +43,7 @@ public class BreadthFirstSearch {
 		if (this.startState.equals(this.goalState)) {
 			System.out.println("Solution found.");
 		}
-
+        
 		ArrayList<String> orderedStates = new ArrayList<String>();
 		orderedStates.add(this.startState.toString());
 		Queue<State> queue = new LinkedList<State>();
