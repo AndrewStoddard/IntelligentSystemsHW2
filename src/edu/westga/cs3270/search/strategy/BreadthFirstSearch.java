@@ -48,7 +48,7 @@ public class BreadthFirstSearch {
 		orderedStates.add(this.startState.toString());
 		Queue<State> queue = new LinkedList<State>();
 		queue.add(this.startState);
-		while(!queue.isEmpty()) {
+		while (!queue.isEmpty()) {
 			State currentState = queue.remove();
 			if (!orderedStates.contains(currentState.toString())) {
 				orderedStates.add(currentState.toString());
