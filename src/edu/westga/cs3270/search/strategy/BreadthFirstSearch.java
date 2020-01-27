@@ -47,7 +47,19 @@ public class BreadthFirstSearch {
 		ArrayList<String> orderedStates = new ArrayList<String>();
 		orderedStates.add(this.startState.toString());
 		Queue<State> queue = new LinkedList<State>();
-		// TO-DO
+		queue.add(this.startState);
+		while(!queue.isEmpty()) {
+			State currentState = queue.remove();
+			if (!orderedStates.contains(currentState.toString())) {
+				orderedStates.add(currentState.toString());
+			}
+			if (currentState == this.goalState) {
+				break;
+			}
+			for (State currentSuccessor : currentState.getSuccessors()) {
+				queue.add(currentSuccessor);
+			}
+		}
 		return orderedStates.toString();
 
 	}
