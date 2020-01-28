@@ -1,0 +1,4 @@
+2. 
+    a. Log Linear because the second loop gets smaller as the first loop iterates.
+    b. n^2 because both loops iterate the same number of times.
+    c. 
